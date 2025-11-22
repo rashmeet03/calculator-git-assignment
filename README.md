@@ -112,13 +112,28 @@ git push
 
 ![Resolved Conflict](Screenshots/07_conflict_resolution.png)
 
-## 8. Git log after Merge Resolution
+## 8. Reflective Note
 
-Complete commit history.
+This assignment helped me understand how Git manages project history and handles parallel development. I learned how branches allow me to work independently without affecting the main project, and how merge conflicts naturally occur when two branches modify the same part of a file.
+
+Creating two separate branches (text-update-a and text-update-b) and modifying the same line in index.html helped me purposely generate a merge conflict. When I attempted to merge the second branch, Git paused and indicated the conflict in the terminal as well as inside the file using conflict markers.
 
 ```bash
-git log --oneline --graph --all
+<<<<<<< HEAD
+=======
+>>>>>>> branch-name
 ```
+
+I used **git diff** to inspect the conflicting changes and then manually edited index.html to combine the correct parts from both branches. After resolving the conflict, I staged the file and completed the merge with:
+
+```bash
+git add index.html
+git commit -m "Resolve merge conflict in description text"
+```
+
+This experience taught me how Git thinks, how it isolates changes across branches, and how to resolve conflicts safely. It also reinforced the importance of writing clean commit messages and pushing code frequently to a remote repository.
+
+Overall, this project improved my understanding of distributed version control and gave me practical experience handling real-world Git workflows.
 
 
 
